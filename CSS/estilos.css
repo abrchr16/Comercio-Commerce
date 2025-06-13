@@ -38,9 +38,9 @@ main {
 }
 
 .Productos {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .titulo {
@@ -103,4 +103,17 @@ main {
 .logo {
     text-decoration: none;
     color: white;
+}
+
+.Numero{
+    font-size: 25px;
+    margin-top: 52px;
+    margin-left: -20px;
+    font-weight: bold;
+}
+
+.carritoDiv {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
 }
