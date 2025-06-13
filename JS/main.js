@@ -1,16 +1,21 @@
-const boton = document.querySelectorAll(".btn.btn-primary");
+const botones = document.querySelectorAll(".btn");
 const productos = ["Mochila", "Zapatillas", "Remera", "Crocs", "Cartera", "Buzo"];
-const numero = document.querySelector(".Numero")
-let i = 0
+const numero = document.querySelector(".Numero");
+let i = 0;
 
-boton.forEach((boton, index) => {
-    boton.addEventListener("click", () => {
-        console.log(`${productos[index]} añadido/a al carrito`);
-        numero.textContent = ++i
-        boton.style.backgroundColor = "#e9ecef";
-        boton.style.color = "#6c757d";
-        boton.style.borderColor = "#dee2e6";
-        boton.disabled = true;
-        boton.textContent = "Añadido";
-    });
+botones.forEach((boton, index) => {
+  boton.addEventListener("click", () => {
+    if (boton.classList.contains("btn-primary")) {
+      console.log(`${productos[index]} añadido/a al carrito`);
+      numero.textContent = ++i;
+      boton.classList.replace("btn-primary", "btn-secondary");
+      boton.textContent = "Añadido";
+    } 
+    else {
+      console.log(`${productos[index]} eliminado/a del carrito`);
+      numero.textContent = --i;
+      boton.classList.replace("btn-secondary", "btn-primary");
+      boton.textContent = "Añadir al carrito";
+    }
+  });
 });
